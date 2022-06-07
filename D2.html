@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['geochart'],
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Cumulative Doses'],
+        ['Argentina', 23831341081],
+        ['Australia', 12610668954],
+        ['Bangladesh', 17535108339],
+        ['Chile', 14853011749],
+        ['China', 922966618700],
+        ['Colombia', 11854494079],
+        ['Germany', 48767042881],
+        ['Spain', 14476634833],
+        ['United States', 186669036901],
+        ['Brazil', 98731041449],
+        ['Canada', 23236560074],
+        ['France', 39676880319],
+        ['Russia', 32521941879],
+        ['United Kingdom', 43092231429],
+        ['Indonesia', 62618252913],
+        ['India', 415687475046],
+        ['Iran', 16193095708],
+        ['Italy', 36547391003],
+        ['Japan', 39135992990],
+        ['South Korea', 28472230936],
+        ['Mexico', 30387464400],
+        ['Malaysia', 17076707869],
+        ['England', 38601432165],
+        ['Pakistan', 24036126872],
+        ['Peru', 14043374682],
+        ['Poland', 13517332983],
+        ['Saudi Arabia', 11404521316],
+        ['Thailand', 27180386998],
+        ['Turkey', 40999195442],
+        ['Vietnam', 19225519336],
+      ]);
+
+      var options = {};
+
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  Cumulative Doses
+</body>
+
+</html>
